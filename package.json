@@ -5,7 +5,6 @@
   "angular-cli": {},
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp"
   },
   "private": true,
   "dependencies": {
