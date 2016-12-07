@@ -1,0 +1,88 @@
+<div class="container-fluid main_content view-job" *ngIf="job">
+
+  <div class="row">
+
+    <div class="col-sm-12">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <br>
+
+          <div class="row">
+            <div class="col-sm-8">
+              <h2>{{job.title}}</h2>
+              <span class="fulltime">{{job.type_job}}</span>&nbsp;&nbsp;<span class="job_info_sep">|</span>&nbsp;&nbsp;{{job.company.location}}&nbsp;&nbsp;<span class="job_info_sep">|</span>&nbsp;&nbsp;Posted on
+              <br><a><span>←&nbsp;</span><span class="lnk-title">Retour</span></a>
+            </div>
+            <div class="col-sm-4">
+              <div><img src="../../assets/img/google.png" alt="" width="100px"></div>
+            </div>
+          </div>
+          <br>
+
+          <hr>
+
+
+          <h3>Job Description</h3>
+
+          <p>Integer eget neque purus. Praesent at tincidunt metus. Nunc sed risus nulla, a laoreet magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget erat mauris, sit amet gravida elit. Sed dictum nisl et eros dictum dictum. Sed cursus risus sed ipsum mollis vitae fermentum ante lacinia. In consequat elit a massa mollis vel mollis nulla vestibulum. Nam euismod, dolor bibendum condimentum adipiscing, elit ante pulvinar velit, id pulvinar urna lacus sit amet diam. Suspendisse potenti. Pellentesque imperdiet, ipsum ut viverra varius, urna arcu sodales nisi, at elementum leo nisl at dui. Integer aliquam porta metus, luctus mollis tellus condimentum eget. Maecenas enim est, lobortis quis vestibulum et, laoreet sed urna. </p>
+
+          <p>Bootstrap Twitter Services are currently seeking a BTI to work part &ndash; full time near Twitter Hill, GB.</p>
+          <p><strong>Requirements:</strong></p>
+          <ol>
+            <li>current active passport</li>
+            <li>typing skills</li>
+            <li>determination to succeed</li>
+            <li>reliable transportation</li>
+            <li>motivation and flexibility!</li>
+          </ol>
+
+
+          <hr>
+          <h3>Job summary</h3>
+          <div class="row">
+
+            <div class="col-sm-4 ">
+              <h4>Société</h4>
+              <span>{{job.company.name}}</span><br>
+
+              <h4>Location</h4>
+              <span>{{job.company.location}}</span><br>
+
+            </div>
+            <div class="col-sm-4 ">
+
+              <h4>Type emploi</h4>
+              <span>{{job.type_job}}</span><br>
+
+              <h4>contrat</h4>
+              <span>{{job.company.name}}</span><br>
+            </div>
+            <div class="col-sm-4 ">
+
+              <h4>Expérience</h4>
+              <span>{{job.experience}}</span><br>
+
+              <h4>Salaire</h4>
+              <span>{{job.salary}}</span><br>
+
+            </div>
+
+
+          </div>
+
+          <hr>
+          <br>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+</div>

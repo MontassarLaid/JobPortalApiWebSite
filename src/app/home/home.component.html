@@ -1,0 +1,49 @@
+
+
+<!-- Image Header -->
+<div class="row">
+  <div class="col-lg-12">
+    <img class="img-responsive" src="../../assets/img/banner-career.jpg" alt="">
+  </div>
+</div>
+<!-- /.row -->
+<br>
+<app-search></app-search>
+
+<section>
+  <div class="container">
+    <h4 class="heading">Dernières offres d'emploi</h4>
+    <div class="job-listing" *ngFor="let job of jobsList|slice:0:6">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <div class="row">
+            <div class="col-xs-2"><img src="../../assets/img/google.png" alt="Google "
+                                       class="img-responsive"></div>
+            <div class="col-xs-10">
+              <h5 class="job__title"><a class="job-title" [routerLink]="['/detail','1']">{{job.title}} -
+                {{job.experience}}</a></h5>
+              <p class="job__company">
+
+                {{job.company.name}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-2 col-md-2 col-md-offset-0"><i
+                class="fa fa-map-marker job__location"></i> {{job.company.location}}
+        </div>
+        <div class="col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-md-3">
+          <p>{{job.salary}}</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-2 col-sm-2 col-sm-offset-0 col-md-1">
+          {{job.type}}
+        </div>
+      </div>
+    </div>
+
+<a [routerLink]="['/jobs']" > Toutes les offres </a>
+  </div>
+</section>
+<!-- /.row -->
+
+<hr>

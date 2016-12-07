@@ -1,0 +1,39 @@
+<h3 class="heading">Liste des offres</h3>
+<br>
+<p><strong>{{jobsCount}}</strong> opportunités trouvées</p>
+
+<table class="table table-striped">
+  <tbody>
+  <tr *ngFor="let job of jobsListing| paginate: { itemsPerPage: 5, currentPage: p }">
+    <td>
+      <img src="../../assets/img/google.png" alt="Google " width="50px;" class="img-responsive">
+    </td>
+    <td>
+      <h5>
+        <a class="job-title" [routerLink]="['/detail',job.id]">{{job.title}} -{{job.experience}}</a>
+      </h5>
+      <p class="job__company">{{job.company.name}}</p>
+    </td>
+    <td>
+      <i class="fa fa-map-marker job__location"></i> {{job.company.location}}
+    </td>
+    <td>{{job.salary}}</td>
+    <td><span class="label label-success">{{job.type_job}}</span></td>
+    <td>
+      <a  [routerLink]="['/edit_job',job.id]" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-pencil"></span></a>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+<div class="row">
+    <div class="3"></div>
+    <div class="col-sm-7">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+
+
+
+

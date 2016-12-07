@@ -1,0 +1,137 @@
+<div class="container">
+  <div class="row">
+    <h3 class="col-lg-12 text-center"><span> <i class="fa fa-user"></i></span>
+      Modifier emploi </h3>
+  </div>
+  <div class="dt-sc-margin20"></div>
+</div>
+
+<form name="formNewJob" style="margin-top:40px;" [formGroup]="form" novalidate (ngSubmit)="editJob(form.value, form.valid)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+             [ngClass]="{'has-error': !form.controls.title.valid, 'has-success': form.controls.title.valid}">
+          <label class="control-label" for="title">Titre</label>
+          <input type="text" class="form-control" id="title" name="title" formControlName="title" [value]="job.title">
+          <div *ngIf="form.controls.title.invalid">
+                <span class="text-danger"
+                      *ngIf="form.controls.title.errors.minlength && form.controls.title.touched">
+                    Le titre doit être au minumum 2 caractéres
+                </span>
+                <span class="text-danger"
+                      *ngIf="form.controls.title.errors.required && form.controls.title.touched">
+                    Le titre est obligatoire
+                </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+             [ngClass]="{'has-error': !form.controls.description.valid, 'has-success': form.controls.description.valid}">
+          <label class="control-label" for="description">Description</label>
+          <input type="textarea" class="form-control" id="description" name="description" formControlName="description" [value]="job.description">
+          <div *ngIf="form.controls.description.invalid">
+              <span class="text-danger"
+                    *ngIf="form.controls.description.errors.required && form.controls.description.touched">
+                  La description est obligatoire
+              </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+             [ngClass]="{'has-error': !form.controls.experience.valid, 'has-success': form.controls.experience.valid}">
+          <label class="control-label" for="experience">Experience</label>
+          <input type="text" class="form-control" id="experience" name="experience" formControlName="experience" [value]="job.experience">
+          <div *ngIf="form.controls.experience.invalid">
+              <span class="text-danger"
+                    *ngIf="form.controls.experience.errors.required && form.controls.experience.touched">
+                  L'experience est obligatoire
+              </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+          <label class="control-label" for="type_job">Type</label>
+          <select class="form-control" name="type_job" id="type_job" formControlName="type_job" [value]="job.type_job">
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+          <label class="control-label" for="contrat">Contrat</label>
+          <select class="form-control" name="contrat" id="contrat" [value]="job.contrat">
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1">
+          <label class="control-label" for="experience">Categorie</label>
+          <select class="form-control" id="category" name="category" [value]="job.category.name">
+            <option [value]="category.name" *ngFor="let category of categories">{{category.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
+             [ngClass]="{'has-error': !form.controls.salary.valid, 'has-success': form.controls.salary.valid}">
+          <label class="control-label" for="experience">Salaire</label>
+          <input type="text" class="form-control" id="salary" name="salary" formControlName="salary" [value]="job.salary">
+          <div *ngIf="form.controls.salary.invalid">
+              <span class="text-danger"
+                    *ngIf="form.controls.salary.errors.required && form.controls.salary.touched">
+                  Le salaire est obligatoire
+              </span>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="col-lg-12 text-center"><span> <i class="fa fa-desktop"></i></span>
+        Société </h4>
+      <div class="col-lg-12 col-md-12">
+        <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12 col-lg-offset-1"
+             [ngClass]="{'has-error': !form.controls.company_name.valid, 'has-success': form.controls.company_name.valid}">
+          <label class="control-label" for="company_name">Nom</label>
+          <input type="text" class="form-control" id="company_name" name="company_name" formControlName="company_name" [value]="job.company.name">
+          <div *ngIf="form.controls.company_name.invalid">
+            <span class="text-danger"
+                  *ngIf="form.controls.company_name.errors.required && form.controls.company_name.touched">
+                Le nom de la société est obligatoire
+            </span>
+          </div>
+        </div>
+        <div class="form-group col-lg-5 col-md-5 col-sm-6 col-xs-12"
+             [ngClass]="{'has-error': !form.controls.company_location.valid, 'has-success': form.controls.company_location.valid}">
+          <label
+            class="control-label" for="company_location">Localisation</label>
+          <input type="text" class="form-control" id="company_location" name="company_location" [value]="job.company.location" formControlName="company_location">
+          <div *ngIf="form.controls.company_location.invalid">
+            <span class="text-danger"
+                  *ngIf="form.controls.company_location.errors.required && form.controls.company_location.touched">
+                La localisation de la société est obligatoire
+            </span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div>
+      <div class='text-center'>
+        <div class="btn-group">
+          <button type="submit" name="btnValide" class="btn btn-primary center-block">Modifier</button>
+          <button type="button" id="btnAnnuler" name="btnAnnuler" class="btn btn-info center-block">
+            Annuler
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+

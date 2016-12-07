@@ -1,0 +1,37 @@
+<section id="primary" class="content-full-width">
+  <div class="full-width-section">
+    <div class="container">
+      <div class="page_info">
+        <h3 class="aligncenter"> <span> <i class="fa fa-user"></i></span>
+          Login </h3>
+      </div>
+      <div class="dt-sc-margin20"></div>
+    </div>
+  </div>
+  <div class="full-width-section parallax full-section-bg">
+    <div class="container">
+      <div class="dt-sc-clear"></div>
+      <div class="form-wrapper login">
+        <form id="loginform" name="frmLogin" #form="ngForm" (ngSubmit)="login(form)">
+
+          <p [ngClass]="{'has-error': !form.valid, 'has-success': form.valid}">
+            <input placeholder="Email" id="user_name" name="email" autocomplete="off" type="text"
+                   ngModel required>
+          </p>
+
+          <p [ngClass]="{'has-error': !form.valid, 'has-success': form.valid}" >
+            <input placeholder="Mot de passe" id="user_pwd" name="password" type="password"
+                   ngModel required>
+          </p>
+
+          <input class="button" value="Login" type="submit">
+
+        </form>
+        <p style="color:#cd0a0a" *ngIf="!loginSuccess">Authentification a échouée , essayer de nouveau !!</p>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>
