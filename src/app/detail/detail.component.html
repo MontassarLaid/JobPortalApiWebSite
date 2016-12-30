@@ -1,3 +1,13 @@
+<!-- Page Heading/Breadcrumbs -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Détail emploi
+    </h1>
+  </div>
+</div>
+<!-- /.row -->
+
+
 <div class="container-fluid main_content view-job" *ngIf="job">
 
   <div class="row">
@@ -12,7 +22,7 @@
             <div class="col-sm-8">
               <h2>{{job.title}}</h2>
               <span class="fulltime">{{job.type_job}}</span>&nbsp;&nbsp;<span class="job_info_sep">|</span>&nbsp;&nbsp;{{job.company.location}}&nbsp;&nbsp;<span class="job_info_sep">|</span>&nbsp;&nbsp;Posted on
-              <br><a><span>←&nbsp;</span><span class="lnk-title">Retour</span></a>
+              <br><a [routerLink]="['/jobs']"><span>←&nbsp;</span><span class="lnk-title">Retour</span></a>
             </div>
             <div class="col-sm-4">
               <div><img src="../../assets/img/google.png" alt="" width="100px"></div>

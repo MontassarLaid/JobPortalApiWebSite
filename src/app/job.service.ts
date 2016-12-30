@@ -41,7 +41,7 @@ export class JobService {
       .map(response => response.json());
   }
 
-  editJob(job):Observable<any> {
+  editJob(job,Id):Observable<any> {
     var params = "title=" + job.title + "&description=" + job.description+ "&experience=" + job.experience+ "&type_job=" + job.type_job +
       "&contrat=" + job.contrat + "&company.name=" + job.company_name+ "&company.location=" + job.company_location+ "&category.name=" + job.category;
     console.log(params);
@@ -49,7 +49,13 @@ export class JobService {
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     return this.http
-      .put(this.UrlWebApi+'/'+job.id , params, {headers: headers})
+      .put(this.UrlWebApi+'/'+Id , params, {headers: headers})
+      .map(response => response.json());
+  }
+
+  deleteJob(id):Observable<any> {
+    return this.http
+      .delete(this.UrlWebApi+'/'+id)
       .map(response => response.json());
   }
 

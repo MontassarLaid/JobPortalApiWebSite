@@ -1,0 +1,13 @@
+h2.list-jobs{
+  margin-bottom: 3%;
+  font-family: serif;
+}
+
+pagination-controls{
+  text-align: center;
+}
+p.jobs-count{
+  font-size: 15px;
+  color: #9C27B0;
+}
+

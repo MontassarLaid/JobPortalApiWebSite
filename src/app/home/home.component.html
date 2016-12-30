@@ -1,9 +1,17 @@
 
+<!-- Page Heading/Breadcrumbs -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Accueil
+    </h1>
+  </div>
+</div>
+<!-- /.row -->
 
 <!-- Image Header -->
 <div class="row">
   <div class="col-lg-12">
-    <img class="img-responsive" src="../../assets/img/banner-career.jpg" alt="">
+    <img class="img-responsive banner_home" src="../../assets/img/banner-career.jpg" alt="">
   </div>
 </div>
 <!-- /.row -->
@@ -41,7 +49,8 @@
       </div>
     </div>
 
-<a [routerLink]="['/jobs']" > Toutes les offres </a>
+    <a class="btn btn-danger all_jobs_button" [routerLink]="['/jobs']"><span class="glyphicon glyphicon-th-list"></span>&nbsp;Toutes les offres</a>
+
   </div>
 </section>
 <!-- /.row -->

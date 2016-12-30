@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Job Portal</a>
+      <a class="navbar-brand" [routerLink]="['/home']">Job Portal</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -19,10 +19,11 @@
           <a [routerLink]="['/home']">Accueil</a>
         </li>
         <li>
-          <a [routerLink]="['/home']">Chercher un emploi</a>
+          <a [routerLink]="['/home']" href="#form-search-job">Chercher un emploi</a>
         </li>
         <li>
-          <a *ngIf="!isLoggedIn || Compte.role == 'candidate'" class="disabled">Ajouter un emploi</a>
+          <a *ngIf="!isLoggedIn || Compte.role == 'candidate'" class="disabled" data-toggle="tooltip" data-placement="bottom"
+             title="vous devez vous connecter et avoir le role employeur !!">Ajouter un emploi</a>
           <a *ngIf="isLoggedIn && Compte.role != 'candidate'" [routerLink]="['/add_job']">Ajouter un emploi</a>
 
         </li>
@@ -43,20 +44,8 @@
 </nav>
 
 <!-- Page Content -->
-<div class="container">
-  <!-- Page Heading/Breadcrumbs -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Accueil
-      </h1>
-      <ol class="breadcrumb">
-        <li><a [routerLink]="['/home']">Accueil</a>
-        </li>
-        <li class="active">Chercher</li>
-      </ol>
-    </div>
-  </div>
-  <!-- /.row -->
+<div class="container container_body">
+
   <router-outlet></router-outlet>
 
   <!-- Footer -->

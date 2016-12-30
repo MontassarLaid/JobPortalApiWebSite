@@ -95,7 +95,6 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
 input[type="submit"], input[type="reset"], input[type="button"], button, .add_to_cart_button, .product_type_variable, .product-details .button, .add_to_wishlist {
   color: #ffffff;
   cursor: pointer;
-  float: right;
   font-size: 15px;
   padding: 16px 16px 15px 16px;
   border-radius: 2px;
@@ -107,5 +106,9 @@ input[type="submit"], .button
 }
 input[type="submit"]:hover, input[type="reset"]:hover {
   background-color: #546d87;
+}
+
+h2.login_user{
+  font-family: serif;
 }
 

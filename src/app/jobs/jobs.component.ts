@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from '../job.service';
 import { AppComponent } from '../app.component';
+declare var jQuery:any;
 
 
 @Component({
@@ -27,5 +28,15 @@ export class JobsComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  deleteJob(Id:any) {
+    this.jobService.deleteJob(Id).subscribe(
+      data => {
+        jQuery('#'+Id).css("display","none");
+      },
+      error => console.error('Error: ' + error),
+      () => console.log('Completed!')
+    );
+  };
 
 }

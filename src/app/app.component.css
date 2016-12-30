@@ -2,3 +2,27 @@ a.disabled {
   color: gray;
   cursor: not-allowed;
 }
+footer{
+  margin-top: 70px;
+  text-align: center;
+}
+
+nav.navbar{
+  position: fixed;
+  width: 87%;
+  margin: auto;
+}
+
+.container_body{
+  background-color: #FAF0E6;
+  margin-top: 52px;
+}
+
+h1.search_job{
+  text-align: center;
+  font-family: serif;
+}
+
+
+
+

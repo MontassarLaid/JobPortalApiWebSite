@@ -1,7 +1,16 @@
+<!-- Page Heading/Breadcrumbs -->
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="page-header">Edition emploi
+    </h1>
+  </div>
+</div>
+<!-- /.row -->
+
 <div class="container">
   <div class="row">
-    <h3 class="col-lg-12 text-center"><span> <i class="fa fa-user"></i></span>
-      Modifier emploi </h3>
+    <h2 class="col-lg-12 text-center edit_job"><span> <i class="fa fa-user"></i></span>
+      Modifier emploi </h2>
   </div>
   <div class="dt-sc-margin20"></div>
 </div>
@@ -11,7 +20,7 @@
     <div class="row">
       <div class="col-lg-12 col-md-12">
         <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
-             [ngClass]="{'has-error': !form.controls.title.valid, 'has-success': form.controls.title.valid}">
+             [ngClass]="{'has-error': !form.controls.title.valid && form.controls.title.touched, 'has-success': form.controls.title.valid}">
           <label class="control-label" for="title">Titre</label>
           <input type="text" class="form-control" id="title" name="title" formControlName="title" [value]="job.title">
           <div *ngIf="form.controls.title.invalid">
@@ -28,7 +37,7 @@
       </div>
       <div class="col-lg-12 col-md-12">
         <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
-             [ngClass]="{'has-error': !form.controls.description.valid, 'has-success': form.controls.description.valid}">
+             [ngClass]="{'has-error': !form.controls.description.valid && form.controls.description.touched, 'has-success': form.controls.description.valid}">
           <label class="control-label" for="description">Description</label>
           <input type="textarea" class="form-control" id="description" name="description" formControlName="description" [value]="job.description">
           <div *ngIf="form.controls.description.invalid">
@@ -41,7 +50,7 @@
       </div>
       <div class="col-lg-12 col-md-12">
         <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
-             [ngClass]="{'has-error': !form.controls.experience.valid, 'has-success': form.controls.experience.valid}">
+             [ngClass]="{'has-error': !form.controls.experience.valid && form.controls.experience.touched, 'has-success': form.controls.experience.valid}">
           <label class="control-label" for="experience">Experience</label>
           <input type="text" class="form-control" id="experience" name="experience" formControlName="experience" [value]="job.experience">
           <div *ngIf="form.controls.experience.invalid">
@@ -80,7 +89,7 @@
       </div>
       <div class="col-lg-12 col-md-12">
         <div class="form-group col-lg-10 col-md-10 col-lg-offset-1"
-             [ngClass]="{'has-error': !form.controls.salary.valid, 'has-success': form.controls.salary.valid}">
+             [ngClass]="{'has-error': !form.controls.salary.valid && form.controls.salary.touched, 'has-success': form.controls.salary.valid}">
           <label class="control-label" for="experience">Salaire</label>
           <input type="text" class="form-control" id="salary" name="salary" formControlName="salary" [value]="job.salary">
           <div *ngIf="form.controls.salary.invalid">

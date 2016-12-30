@@ -16,7 +16,12 @@ export class EditJobComponent implements OnInit {
   form:FormGroup;
   categories;
   job={
+    id:"",
     title:"",
+    description:"",
+    type_job:"",
+    experience:"",
+    salary:"",
     category: {name : ""},
     company : {name : "", location: ""},
   };
@@ -52,6 +57,13 @@ export class EditJobComponent implements OnInit {
             data => {
               this.job = data;
               console.log( this.job);
+              this.form.controls['title'].setValue(this.job.title);
+              this.form.controls['description'].setValue(this.job.description);
+              this.form.controls['experience'].setValue(this.job.experience);
+              this.form.controls['type_job'].setValue(this.job.type_job);
+              this.form.controls['salary'].setValue(this.job.salary);
+              this.form.controls['company_name'].setValue(this.job.company.name);
+              this.form.controls['company_location'].setValue(this.job.company.location);
             },
             error => console.error('Error: ' + error),
             () => console.log('Completed! ee')
@@ -61,7 +73,7 @@ export class EditJobComponent implements OnInit {
 
   editJob(model:any, isValid:boolean) {
     if (isValid) {
-      this.jobService.editJob(model).subscribe(
+      this.jobService.editJob(model, this.job.id).subscribe(
         data => {
           this.router.navigate(['/jobs']);
         },
